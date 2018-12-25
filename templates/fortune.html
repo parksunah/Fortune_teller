@@ -14,10 +14,11 @@
              <h2> Share today's luck with your freind!</h2>
              <form action="/fortune_delivery" method="POST">
                 <p>
-                 {{ form.friendname.label }}<br>
-                 {{ form.friendname(size=32) }}
-                 {{ form.phone_number.label }}<br>
-                 {{ form.phone_number(size=32) }}
+                 {{ form.friendname.label }}
+                 {{ form.friendname(size=32) }}<br>
+                 {{ form.phone_number.label }}
+                 {{ form.phone_number(size=45) }}<br>
+                 [+][country code][phone number including area code]
                 </p>
                 <p>{{ form.submit() }}</p>
             </form>

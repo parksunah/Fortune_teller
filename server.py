@@ -3,6 +3,8 @@ from flask import Flask, render_template, request
 from flask_debugtoolbar import DebugToolbarExtension
 import forms
 import random
+from twilio.rest import Client
+import os
 
 app = Flask(__name__)
 
@@ -39,11 +41,26 @@ def fortune_delivery():
   
     friendname = request.form['friendname']
     phone_num = request.form['phone_number']
-  
+
     with open('fortune.txt') as f:
         lines = f.readlines()
+
+    random_fortune = random.choice(lines)
+
+    account_sid = os.environ['ACCOUNT_SID']
+    auth_token = os.environ['AUTH_TOKEN']
+    client = Client(account_sid, auth_token)
+
+
+    message = client.messages \
+                    .create(
+                         body=random_fortune,
+                         from_='+15072600733',
+                         to=phone_num
+                     )
+
   
-    return render_template('fortune_delivery.html', friendname=friendname, phone_num=phone_num, fortune_text = random.choice(lines))
+    return render_template('fortune_delivery.html', friendname=friendname, phone_num=phone_num, fortune_text = random_fortune)
 
 
 if __name__ == "__main__":
