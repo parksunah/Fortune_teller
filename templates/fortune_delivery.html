@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Fortune Teller</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='quote.css') }}">
+    </head>
+    <body>
+        <h2>Successfuly Delivered!</h2>
+        <br>
+        {{ friendname }}
+        {{ phone_num }}
+         <div class="quotation">
+             {{ fortune_text }}
+         </div>
+    </body>
+</html>
