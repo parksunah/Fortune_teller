@@ -5,26 +5,32 @@
 {% block content %}
 
 <body>
-    <div class="container">
-<h2>Hello, {{ username }}!</h2>
-<br>
-<div class="quotation">
-{{ fortune_text }}
-</div>
-<div>
-<h2> We can delivery today's luck to your freind!</h2>
-<form action="/fortune_delivery" method="POST">
-{{ form.hidden_tag() }}
-<input type="hidden" name="username" value="{{ username }}">
-<p>
-{{ form.friendname(size=32) }}<br>
-{{ form.phone_number(size=32) }}<br>
-e.g.) [country code][phone number including area code]
-</p>
-<p>{{ form.submit() }}</p>
-</form>
-</div>
-</div>
+    <div class="container" id="fortune">
+        <div class="row">
+            <h2>Hello, {{ username }}!</h2>
+        </div>
+        <br>
+        
+        <div class="quotation row">
+            {{ fortune_text }}
+        </div>
+        <br>
+        
+        <div class="row" id="delivery">
+            <h4> <i class="fas fa-truck"></i> We can deliver today's fortune to your freind!</h4>
+        </div>
+        <div class="row">
+            <form action="/fortune_delivery" method="POST">
+                {{ form.hidden_tag() }}
+                <input type="hidden" name="username" value="{{ username }}">
+                <p>{{ form.friendname(size=32, class="form-control") }}</p>
+                <p> {{ form.phone_number(size=32, class="form-control") }}
+                e.g.) [country code][phone number including area code]
+                </p>
+                <p>{{ form.submit(class="btn btn-primary") }}</p>
+            </form>
+        </div>
+    </div>
 </body>
 
 {% endblock %}
