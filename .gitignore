@@ -1,5 +1,3 @@
 env/
 *.pyc
-data.csv
 secret.sh
-.DS_Store
