@@ -1,8 +1,9 @@
-<!doctype html>
-<html>
-    <head>
-        <title>Fortune Teller</title>
-    </head>
+{% extends 'base.html' %}
+
+{% block title %} Fortune Teller {% endblock %}
+
+{% block content %}
+
     <body>
     <img src="/static/cookie_rich.jpg">
         <form action="/fortune" method="POST">
@@ -13,4 +14,5 @@
             <p>{{ form.submit() }}</p>
         </form>
     </body>
-</html>
+
+{% endblock %}
