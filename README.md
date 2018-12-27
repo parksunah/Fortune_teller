@@ -5,7 +5,7 @@ This webapp provides a random fortune to user and lets users send their friend's
 - Python, HTML, CSS, Flask, Bootstrap, Flask-WTF
 
 # API Used
-- Twilio Messaging API.
+- Twilio Messaging API
 
 # Features
 ![alt text](https://github.com/parksunah/Fortune_teller/blob/master/static/Home.png?raw=true)
