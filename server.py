@@ -46,7 +46,7 @@ def fortune_delivery():
     with open('fortune.txt') as f:
         lines = f.readlines()
 
-    random_fortune = "Hi" + friendname + "," + "this is today's fortune from your friend -" + username + ": " + random.choice(lines)
+    fortune_text = "Hi" + friendname + "," + "this is today's fortune from your friend -" + username + ": " + random.choice(lines)
 
     account_sid = os.environ['ACCOUNT_SID']
     auth_token = os.environ['AUTH_TOKEN']
@@ -61,7 +61,7 @@ def fortune_delivery():
                      )
 
   
-    return render_template('fortune_delivery.html', friendname=friendname, phone_num=phone_num, fortune_text = random_fortune)
+    return render_template('fortune_delivery.html', friendname=friendname, phone_num=phone_num, fortune_text = fortune_text)
 
 
 if __name__ == "__main__":

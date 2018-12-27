@@ -4,15 +4,29 @@
 
 {% block content %}
 
-    <body>
-    <img src="/static/cookie_rich.jpg">
-        <form action="/fortune" method="POST">
-            {{ form.hidden_tag() }}
-            <p>
-                {{ form.username(size=32) }}
-            </p>
-            <p>{{ form.submit() }}</p>
-        </form>
-    </body>
+<body>
+<div class="container">
+<div class="row">
+<div class="col-md-3"></div>
+<div class="col-md-6">
+<img src="/static/cookie_rich.jpg" width="600px">
+</div>
+<div class="col-md-3"></div>
+</div>
+<form action="/fortune" method="POST">
+<div class="row">
+<div class="col-md-3"></div>
+<div class="col-md-4">
+{{ form.hidden_tag() }}
+{{ form.username(class="form-control") }}
+</div>
+<div class="col-md-3">
+{{ form.submit(class="btn btn-primary") }}
+</div>
+<div class="col-md-2"></div>
+</div>
+</form>
+</div>
+</body>
 
 {% endblock %}
