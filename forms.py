@@ -11,4 +11,4 @@ class PhoneNumberForm(FlaskForm):
     friendname = StringField('Friend Name', validators=[DataRequired()], render_kw={"placeholder": "What's your friend's name?"})
     phone_number = StringField('Phone Number', validators=[DataRequired()], 
                                                render_kw={"placeholder": "What's your friend's phone number?"})
-    submit = SubmitField('Fortune delivery request')
+    submit = SubmitField('Send')
