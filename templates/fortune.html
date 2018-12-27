@@ -4,25 +4,27 @@
 
 {% block content %}
 
-    <body>
-        <h2>Hello, {{ username }}!</h2>
-        <br>
-         <div class="quotation">
-             {{ fortune_text }}
-         </div>
-         <div>
-             <h2> We can delivery today's luck to your freind!</h2>
-             <form action="/fortune_delivery" method="POST">
-                {{ form.hidden_tag() }}
-                <input type="hidden" name="username" value="{{ username }}">
-                <p>
-                 {{ form.friendname(size=32) }}<br>
-                 {{ form.phone_number(size=32) }}<br>
-                 e.g.) [country code][phone number including area code]
-                </p>
-                <p>{{ form.submit() }}</p>
-            </form>
-         </div>
-    </body>
+<body>
+    <div class="container">
+<h2>Hello, {{ username }}!</h2>
+<br>
+<div class="quotation">
+{{ fortune_text }}
+</div>
+<div>
+<h2> We can delivery today's luck to your freind!</h2>
+<form action="/fortune_delivery" method="POST">
+{{ form.hidden_tag() }}
+<input type="hidden" name="username" value="{{ username }}">
+<p>
+{{ form.friendname(size=32) }}<br>
+{{ form.phone_number(size=32) }}<br>
+e.g.) [country code][phone number including area code]
+</p>
+<p>{{ form.submit() }}</p>
+</form>
+</div>
+</div>
+</body>
 
 {% endblock %}
