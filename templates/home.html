@@ -4,12 +4,10 @@
         <title>Fortune Teller</title>
     </head>
     <body>
-    <img src="/static/cookie_rich.jpg" width="300"/>
-        <h2>Please enter your name</h2>
+    <img src="/static/cookie_rich.jpg">
         <form action="/fortune" method="POST">
             {{ form.hidden_tag() }}
             <p>
-                {{ form.username.label }}<br>
                 {{ form.username(size=32) }}
             </p>
             <p>{{ form.submit() }}</p>

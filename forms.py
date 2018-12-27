@@ -4,11 +4,11 @@ from wtforms.validators import DataRequired
 
 
 class NameForm(FlaskForm):
-    username = StringField('Name', validators=[DataRequired()])
+    username = StringField('Name', validators=[DataRequired()], render_kw={"placeholder": "Please enter your name"})
     submit = SubmitField('See your fortune!')
 
 class PhoneNumberForm(FlaskForm):
-    friendname = StringField('Friend Name', validators=[DataRequired()])
+    friendname = StringField('Friend Name', validators=[DataRequired()], render_kw={"placeholder": "What's your friend's name?"})
     phone_number = StringField('Phone Number', validators=[DataRequired()], 
-                                               render_kw={"placeholder": "[country code][phone number including area code]"})
-    submit = SubmitField('Share with friend!')
+                                               render_kw={"placeholder": "What's your friend's phone number?"})
+    submit = SubmitField('Fortune delivery request')

@@ -39,13 +39,16 @@ def show_fortune():
 @app.route('/fortune_delivery', methods=['POST'])
 def fortune_delivery():
   
+    username = request.form['username']
     friendname = request.form['friendname']
     phone_num = request.form['phone_number']
 
     with open('fortune.txt') as f:
         lines = f.readlines()
 
-    random_fortune = random.choice(lines)
+    random_fortune = "Hi," + friendname + \
+                     "This is a today's fortune your friend -" + username + "- sent :" + \
+                     random.choice(lines)
 
     account_sid = os.environ['ACCOUNT_SID']
     auth_token = os.environ['AUTH_TOKEN']
