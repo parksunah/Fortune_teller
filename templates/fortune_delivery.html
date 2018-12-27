@@ -5,20 +5,21 @@
 {% block content %}
 
 <body>
-<div class="container" id="fortune">
-<h2>Successfully Sent! <i class="fas fa-check-circle"></i></h2>
-<br>
-<div class="card border-dark mb-3" style="max-width: 18rem;">
-<div class="card-header">Your friend - {{ friendname }}, received today's fortune below.</div>
-<div class="card-body text-dark">
-<h5 class="card-title">{{ fortune_text }}</h5>
-</div>
-</div>
-<div>
-    <a href="/" class="badge badge-primary">Home</a>
-    <a href="/fortune" class="badge badge-warning">Send another fortune</a>
-</div>
-</div>
+    <div class="container" id="fortune">
+        <h2>Successfully Sent! <i class="fas fa-check-circle"></i></h2>
+        <br>
+        
+        <div class="card border-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">Your friend - {{ friendname }}, received today's fortune below.</div>
+            <div class="card-body text-dark">
+                <h5 class="card-title">{{ fortune_text }}</h5>
+            </div>
+        </div>
+        <div>
+            <a href="/" class="badge badge-primary">Home</a>
+            <a href="/fortune" class="badge badge-warning">Send another fortune</a>
+        </div>
+    </div>
 </body>
 
 {% endblock %}
