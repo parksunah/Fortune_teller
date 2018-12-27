@@ -8,7 +8,6 @@ This webapp provides a random fortune to user and lets users send their friend's
 - Twilio Messaging API.
 
 # Features
-- Homepage
 ![alt text](https://github.com/parksunah/Fortune_teller/blob/master/static/Home.png?raw=true)
 
 - By typing in a user name, users can get today's random fortune for them. Users can send thier friend's fortune via SMS through Twilio API.
