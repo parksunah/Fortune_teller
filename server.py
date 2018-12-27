@@ -46,7 +46,7 @@ def fortune_delivery():
     with open('fortune.txt') as f:
         lines = f.readlines()
 
-    fortune_text = "Hello" + friendname + "," + "this is today's fortune from your friend -" + username + ": " + random.choice(lines)
+    fortune_text = "Hello " + friendname + "," + " this is today's fortune from your friend -" + username + " { " + random.choice(lines) + " }"
 
     account_sid = os.environ['ACCOUNT_SID']
     auth_token = os.environ['AUTH_TOKEN']
@@ -55,7 +55,7 @@ def fortune_delivery():
 
     message = client.messages \
                     .create(
-                         body=random_fortune,
+                         body=fortune_text,
                          from_='+15072600733',
                          to=phone_num
                      )
